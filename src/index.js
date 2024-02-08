@@ -2,8 +2,10 @@ import { userInterface } from "./gui";
 
 const mainContainer = document.getElementById("main-container");
 
-let userText = userInterface();
+let gui = userInterface();
 
-mainContainer.appendChild(userText.pageHeader);
+mainContainer.appendChild(gui.pageHeader());
+mainContainer.appendChild(gui.sideBar());
+mainContainer.appendChild(gui.pageFooter());
 
-console.log(userText.pageHeader);
+// console.log(userText.pageHeader);
