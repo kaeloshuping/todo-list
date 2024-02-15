@@ -1,6 +1,7 @@
 // this factory is in charge of creating the page side bar 
 // as well as modifications related to the side bar
 function sideBar() {
+    
     // create side bar container
     const sideBarContainer = makeElement("div", "side-bar");
 
@@ -77,9 +78,14 @@ function sideBar() {
         return container;
     };
 
-    function newProject() {
-
-    }
+    (function createNewProject() {
+        newProjectBtn.addEventListener("click", () => {
+            const projectName = prompt("Project Name");
+            const newProject = makeElement("div", "", projectName);
+            newProject.classList = "projects";
+            projectsList.insertBefore(newProject, newProjectBtn);
+        });
+    })();
     
     return { sideBarContainer, makeElement, appendElements };
 };
